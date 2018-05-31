@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class SignIn extends Component {
   submit = (values) => {
-    this.props.signInAction(values, this.props.history);
+    this.props.signInAction(values, this.props.router);
   }
 
   errorMessage() {
@@ -29,9 +29,9 @@ class SignIn extends Component {
                   component="input"
                   type="text"
                   placeholder="Email" />
-            <Field name="password" 
+            <Field name="password"
                   component="input"
-                  type="password" 
+                  type="password"
                   placeholder="Password" />
             <button type="submit" className="blue">Sign In</button>
           </form>

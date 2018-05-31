@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { registerAction } from 'store/actions/register';
 import { connect } from 'react-redux';
 
 class Register extends Component {
+
   submit = (values) => {
-    console.log(values)
+    this.props.registerAction(values, this.props.router)
   }
 
   errorMessage() {
@@ -47,10 +49,19 @@ class Register extends Component {
             <div>
               <label>Password</label>
               <div>
-              <Field name="password" 
+              <Field name="password"
                   component="input"
-                  type="password" 
+                  type="password"
                   placeholder="Password" />
+              </div>
+            </div>
+            <div>
+              <label>Password Confirmation</label>
+              <div>
+              <Field name="password_confirmation"
+                  component="input"
+                  type="password"
+                  placeholder="Re-type Password" />
               </div>
             </div>
             <button type="submit" className="blue">Sign In</button>
@@ -70,4 +81,4 @@ const reduxFormRegister = reduxForm({
   form: 'register'
 })(Register);
 
-export default connect(mapStateToProps)(reduxFormRegister);
+export default connect(mapStateToProps, {registerAction})(reduxFormRegister);

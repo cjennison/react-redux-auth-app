@@ -1,4 +1,5 @@
 import { injectReducer } from '../../store/reducers'
+import RequiresAuth from 'components/hoc/RequiresAuth'
 
 export default (store) => ({
   path : 'counter',
@@ -16,7 +17,7 @@ export default (store) => ({
       injectReducer(store, { key: 'counter', reducer })
 
       /*  Return getComponent   */
-      cb(null, Counter)
+      cb(null, RequiresAuth(Counter))
 
     /* Webpack named bundle   */
     }, 'counter')
