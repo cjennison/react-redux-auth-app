@@ -3,7 +3,7 @@ import { IndexLink, Link } from 'react-router'
 import PropTypes from 'prop-types'
 
 export const OnboardingLayout = ({ children }) => (
-  <div className='container text-center'>
+  <div className='text-center'>
     <h1>Authenticate</h1>
     <Link to='/auth/signin'> Sign In </Link>
     <Link to='/auth/register'> Register </Link>

@@ -2,7 +2,6 @@ import React from 'react'
 import { browserHistory, Router } from 'react-router'
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
-import { AUTHENTICATED } from 'store/actions/signin';
 
 class App extends React.Component {
   static propTypes = {

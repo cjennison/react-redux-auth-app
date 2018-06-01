@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { IndexLink, Link } from 'react-router'
 import PropTypes from 'prop-types'
 import NavBar from 'components/NavBar'
@@ -13,6 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
+import Paper from '@material-ui/core/Paper';
 
 import './PageLayout.scss'
 
@@ -52,9 +53,14 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
   },
+  main: {
+    paddingTop: theme.spacing.unit * 3,
+    paddingLeft: theme.spacing.unit * 3,
+    height: "100%",
+  }
 });
 
-class PageLayout extends React.Component {
+class PageLayout extends Component {
   state = {
     mobileOpen: false,
   };
@@ -113,7 +119,9 @@ class PageLayout extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          {this.props.children}
+          <Paper className={classes.main}>
+            {this.props.children}
+          </Paper>
         </main>
       </div>
     );
