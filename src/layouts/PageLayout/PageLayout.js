@@ -78,8 +78,7 @@ class PageLayout extends React.Component {
               color="inherit"
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
-            >
+              className={classes.navIconHide}>
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
@@ -98,8 +97,7 @@ class PageLayout extends React.Component {
             }}
             ModalProps={{
               keepMounted: true
-            }}
-          >
+            }}>
             {drawer}
           </Drawer>
         </Hidden>
@@ -109,8 +107,7 @@ class PageLayout extends React.Component {
             open
             classes={{
               paper: classes.drawerPaper
-            }}
-          >
+            }}>
             {drawer}
           </Drawer>
         </Hidden>
@@ -119,7 +116,6 @@ class PageLayout extends React.Component {
           {this.props.children}
         </main>
       </div>
-
     );
   }
 }
@@ -131,33 +127,3 @@ PageLayout.propTypes = {
 };
 
 export default withStyles(styles, { withTheme: true })(PageLayout);
-
-
-
-
-
-export const _PageLayout = ({ children }) => (
-  <div>
-    <div>
-      <div>
-        <NavBar />
-      </div>
-      <div>
-        <div>
-          <div className='page-layout__viewport'>
-            {children}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)
-
-
-/*PageLayout.propTypes = {
-  children: PropTypes.node,
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
-}*/
-
-//export default withStyles(styles, { withTheme: true })(PageLayout);

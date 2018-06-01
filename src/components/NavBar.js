@@ -30,7 +30,7 @@ class Navbar extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <h4 style={{ textAlign: "center" }}>{this.authDisplay()}</h4>
+        <div style={{ textAlign: "center" }}>{this.authDisplay()}</div>
         <Divider />
         <List>
           <Link to="/">
